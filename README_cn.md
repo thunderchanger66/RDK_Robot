@@ -16,6 +16,8 @@
 
 ## 整体结构展示
 
+整体功能模块图
 ![整体功能模块图](docs/imgs/function.png)
 
+整体架构图
 ![整体架构图](docs/imgs/structure.png)
