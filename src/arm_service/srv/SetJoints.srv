@@ -1,0 +1,5 @@
+float64[] joints  # 5个关节角度
+bool open         # 夹爪状态
+---
+bool success
+string message

@@ -1,0 +1,223 @@
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #ffffff;
+}
+
+/* 左侧和右侧面板布局 */
+.left-panel {
+    flex: 1;  
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.right-panel {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;  /* 浅灰色背景 */
+}
+
+.header {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 30px; 
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 0 0 auto;  
+}
+
+.header h1 {
+    margin: 0;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 视频容器样式 */
+.elemento-derecha {
+    width: 100%;
+    height: 65%;  /* 增加视频区域的高度占比 */
+    margin-bottom: 30px;  /* 增加与按钮区域的间距 */
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex: 0 0 auto;  /* 不参与伸缩 */
+}
+
+/* 视频区域样式 */
+#media {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: relative;
+}
+
+/* 视频标题样式 */
+.title {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+    font-size: 16px;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* 视频元素样式 */
+#video {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    object-fit: contain;
+}
+
+/* ROS 控制区域布局 */
+.ros-controls {
+    width: 100%;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 0 0 auto;  /* 不参与伸缩 */
+}
+
+/* ROS 控制区域标题 */
+.ros-controls h2, .ros-controls h3 {
+    margin: 10px 0;
+    color: #333;  /* 改为黑色文字 */
+    text-align: center;
+    font-weight: bold;
+}
+/* 控制按钮样式 */
+.ros-controls button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    background-color: #2980b9;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* 按钮悬停效果 */
+.ros-controls button:hover {
+    background-color: #3498db;
+    transform: scale(1.05);
+}
+
+/* 按钮按下效果 */
+.ros-controls button:active {
+    transform: scale(0.95);
+}
+
+/* 按钮组布局 */
+.ros-controls div {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 右侧面板基础样式 (预留样式) */
+.right-panel {
+    border-left: 1px solid #333;
+}
+
+
+/* 搜索栏样式 */
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* 搜索输入框 */
+.search-bar input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background: #222;
+    color: #fff;
+}
+
+/* 搜索按钮 */
+.search-bar button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #2980b9;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 表格单元格 */
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+}
+
+/* 表头样式 */
+th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 表格行悬停效果 */
+tr:hover {
+    background-color: #f8f8f8;
+}
+
+/* 工具选择区域样式 */
+.tool-selection {
+    margin: 15px 0;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 5px;
+}
+
+.tool-selection select {
+    padding: 8px;
+    margin-right: 10px;
+    width: 150px;
+}
+
+.tool-selection button {
+    padding: 8px 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.tool-selection button:hover {
+    background: #45a049;
+}
