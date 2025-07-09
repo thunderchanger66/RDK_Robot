@@ -22,3 +22,6 @@
 
 ### 整体架构图
 ![整体架构图](docs/imgs/structure.png)
+
+### 3D模型展示图
+![3D模型展示图](docs/imgs/3DModel.png)

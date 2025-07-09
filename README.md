@@ -22,3 +22,6 @@ This project is built on the Digua RDK X5 ROS2 mobile robot platform. It integra
 
 ### System Architecture Diagram  
 ![System Architecture Diagram](docs/imgs/structure.png)
+
+### 3D Model Rendering Visualization
+![3D Model Rendering Visualization](docs/imgs/3DModel.png)
