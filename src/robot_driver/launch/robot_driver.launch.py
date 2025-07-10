@@ -34,9 +34,16 @@ def generate_launch_description():
         name='arm_service'
     )
 
+    linear_act = Node(
+        package='linear_actuator',
+        executable='linear_actuator',
+        name='linear_actuator'
+    )
+
     return LaunchDescription([
         robot_driver,
         lidar_launch,
         visual_robot_launch,
-        arm_server
+        arm_server,
+        linear_act
     ])
