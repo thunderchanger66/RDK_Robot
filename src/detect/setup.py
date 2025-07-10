@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'detect=detect.detect:main',
+            'YOLO11=detect.YOLO11:main',
+            'callprocess=detect.callprocess:main',
         ],
     },
 )
