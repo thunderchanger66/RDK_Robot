@@ -1,35 +1,29 @@
-#!/usr/bin/env python3
+from toolmsg.srv import ToolDetection
 import rclpy
 from rclpy.node import Node
-from std_srvs.srv import Trigger
 
-
-class ImageProcessClient(Node):
+class Client(Node):
     def __init__(self):
-        super().__init__('image_process_client')
-        self.cli = self.create_client(Trigger, 'process_latest_image')
-
+        super().__init__('client_node')
+        self.cli = self.create_client(ToolDetection, 'process_latest_image')
         while not self.cli.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info('服务 [process_latest_image] 不可用，等待中...')
-
-        self.req = Trigger.Request()
+            self.get_logger().info('服务还没启动...')
+        self.req = ToolDetection.Request()
 
     def send_request(self):
         future = self.cli.call_async(self.req)
         rclpy.spin_until_future_complete(self, future)
-        if future.result() is not None:
-            self.get_logger().info(f'调用结果: success={future.result().success}, message="{future.result().message}"')
+        if future.result():
+            for tool in future.result().positions:
+                print(f"{tool.tool_type}: x={tool.x:.3f}, y={tool.y:.3f}, z={tool.z:.3f}, confidence={tool.confidence:.2f}")
         else:
-            self.get_logger().error('服务调用失败')
+            print("服务调用失败")
 
-
-def main(args=None):
-    rclpy.init(args=args)
-    client = ImageProcessClient()
+def main():
+    rclpy.init()
+    client = Client()
     client.send_request()
-    client.destroy_node()
     rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()

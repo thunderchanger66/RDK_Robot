@@ -30,6 +30,7 @@ endif()
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ToolPosition.msg"
   "msg/ToolPositionArray.msg"
+  "srv/ToolDetection.srv"
   DEPENDENCIES builtin_interfaces std_msgs
 )
 

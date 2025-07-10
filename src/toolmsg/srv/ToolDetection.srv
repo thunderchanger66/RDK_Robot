@@ -1,0 +1,6 @@
+# 空的请求
+---
+
+toolmsg/ToolPosition[] positions
+bool success
+string message
